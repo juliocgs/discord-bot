@@ -1,0 +1,32 @@
+{
+    "development": {
+        "client": "mysql",
+        "useNullAsDefault": true,
+        "debug": true,
+        "connection": {
+            "host": "container_mariadb_discord_bot",
+            "port": 3306,
+            "user": "root",
+            "password": "root",
+            "database": "discord_bot"
+        },
+        "migrations": {
+            "directory": "./src/database/migrations"
+        }
+    },
+    "production": {
+        "client": "mysql",
+        "useNullAsDefault": true,
+        "debug": false,
+        "connection": {
+            "host": "xxxxxx",
+            "port": 3306,
+            "user": "xxxxxx",
+            "password": "xxxxxx",
+            "database": "xxxxxx"
+        },
+        "migrations": {
+            "directory": "./src/database/migrations"
+        }
+    }
+}

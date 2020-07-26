@@ -1,0 +1,14 @@
+{
+    "development": {
+        "token": "YOUR_BOT_TOKEN",
+        "prefix": "!",
+        "initChannel": "bot-testing",
+        "authorId": "YOUR_DISCORD_USER_ID"
+    },
+    "production": {
+        "token": "xxxxxx",
+        "prefix": "xxxxxx",
+        "initChannel": "xxxxxx",
+        "authorId": "xxxxxx"
+    }
+}
