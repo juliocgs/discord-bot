@@ -48,6 +48,8 @@ class HelpCommand extends BaseCommand {
         if (command.usage)
             data.push(`Usage: ${this.config.prefix}${command.name} ${command.usage}`);
 
+        data.push(`Can be used in DM Channel: ${command.allowDM ? 'Yes' : 'No'}`);
+
         data.push('```');
         message.channel.send(data, { split: true });
     }

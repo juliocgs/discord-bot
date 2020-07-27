@@ -12,7 +12,7 @@ module.exports = class CommandHandler {
     constructor(bot) {
         this.bot = bot;
         this.config = require('./services/config-service');
-        this.commandFiles = require('fs').readdirSync(`${__dirname}/commands`).filter(file => file.endsWith('.js') && file !== 'base-command.js' && file !== "raid-start.js");
+        this.commandFiles = require('fs').readdirSync(`${__dirname}/commands`).filter(file => file.endsWith('.js') && file !== 'base-command.js');
 
         this.loadCommands();
         this.setupCommandListeners();
