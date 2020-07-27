@@ -1,6 +1,9 @@
 const BaseCommand = require('./base-command');
 
-module.exports = class RoleDeleteCommand extends BaseCommand {
+/**
+ * Role Remove Command Class
+ */
+module.exports = class RoleRemoveCommand extends BaseCommand {
     constructor() {
         super(
             'roleremove'
@@ -12,6 +15,8 @@ module.exports = class RoleDeleteCommand extends BaseCommand {
     }
 
     async execute(message, args) {
+        await super.execute(message, args);
+
         const roleName = args[0];
         const role = message.guild.roles.cache.find(r => r.name === roleName);
 

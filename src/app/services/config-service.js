@@ -1,5 +1,6 @@
-const ValidationResult = require('../utils/validation-result');
-
+/**
+ * Configuration Service Class
+ */
 class ConfigService {
     token;
     prefix;

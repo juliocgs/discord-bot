@@ -1,5 +1,8 @@
 const BaseCommand = require('./base-command');
 
+/**
+ * Help Command Class
+ */
 class HelpCommand extends BaseCommand {
     constructor() {
         super(
@@ -8,10 +11,13 @@ class HelpCommand extends BaseCommand {
             , false
             , ['commands']
             , '[command name]'
+            , true
         )
     }
 
     async execute(message, args) {
+        await super.execute(message, args);
+
         const data = [];
         let { commands } = message.client;
 

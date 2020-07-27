@@ -1,5 +1,8 @@
 const BaseCommand = require('./base-command');
 
+/**
+ * Role Assign Command Class
+ */
 module.exports = class RoleAssignCommand extends BaseCommand {
     constructor() {
         super(
@@ -12,6 +15,8 @@ module.exports = class RoleAssignCommand extends BaseCommand {
     }
 
     async execute(message, args) {
+        await super.execute(message, args);
+
         const roleName = args[0];
         const role = message.guild.roles.cache.find(r => r.name === roleName);
 

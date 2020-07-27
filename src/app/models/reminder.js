@@ -1,6 +1,8 @@
 const BaseModel = require('./base-model');
-const { Model } = require('objection');
 
+/**
+ * Reminder Entity Class
+ */
 module.exports = class Reminder extends BaseModel {
     static get tableName() {
         return 'reminder';

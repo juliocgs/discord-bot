@@ -1,5 +1,8 @@
 const BaseCommand = require('./base-command');
 
+/**
+ * Prune Command Class
+ */
 module.exports = class PruneCommand extends BaseCommand {
     constructor() {
         super(
@@ -11,7 +14,9 @@ module.exports = class PruneCommand extends BaseCommand {
         )
     }
 
-    execute(message, args) {
+    async execute(message, args) {
+        await super.execute(message, args);
+
         if (message.author.id === this.config.authorId) {
             const amount = parseInt(args[0]);
 

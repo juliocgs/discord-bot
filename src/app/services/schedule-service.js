@@ -1,5 +1,8 @@
 const ValidationResult = require('../utils/validation-result');
 
+/**
+ * Schedule Servive class
+ */
 class ScheduleService {
     schedule;
 
@@ -7,10 +10,16 @@ class ScheduleService {
         this.schedule = require('node-schedule');
     }
 
+    /**
+     * Gets all scheduled jobs
+     */
     getAllScheduledJobs() {
         return this.schedule.scheduledJobs;
     }
 
+    /**
+     * Schedule a new job or reenchedule a existing one
+     */
     scheduleJob(jobName, date, action) {
         if (this.getAllScheduledJobs()[jobName]) {
             this.getAllScheduledJobs()[jobName].reschedule(date);
@@ -22,6 +31,9 @@ class ScheduleService {
         }
     }
 
+    /**
+     * Cancel a scheduled job by it's name
+     */
     cancelJob(jobName) {
         const result = new ValidationResult();
 

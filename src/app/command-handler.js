@@ -1,3 +1,5 @@
+const DmException = require('./exceptions/dm-exception');
+
 /**
  * Command Handler Class
 */
@@ -57,8 +59,13 @@ module.exports = class CommandHandler {
             try {
                 await command.execute(message, args);
             } catch (error) {
-                console.error(error);
-                message.reply('there was an error trying to execute that command!');
+                if (error instanceof DmException) {
+                    message.reply(error.message);
+                }
+                else {
+                    console.error(error);
+                    message.reply('there was an error trying to execute that command!');
+                }
             }
         });
     }

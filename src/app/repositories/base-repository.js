@@ -1,5 +1,8 @@
 const { Model } = require('objection');
 
+/**
+ * Base Repository Class
+ */
 module.exports = class BaseRepository {
     model;
 
@@ -11,26 +14,44 @@ module.exports = class BaseRepository {
         this.model = model;
     }
 
+    /**
+     * Gets the query object for this model
+     */
     query() {
         return this.model.query();
     }
 
+    /**
+     * Gets all entities
+     */
     async all() {
         return this.query();
     }
 
+    /**
+     * Gets an entity by it's id
+     */
     async find(id) {
         return this.query().findById(id);
     }
 
-    async create(model) {
+    /**
+     * Inserts a new entity
+     */
+    async insert(model) {
         return this.query().insert(model);
     }
 
+    /**
+     * Updates an existing entity
+     */
     async update(id, model) {
         return this.query().patchAndFetchById(id, model);
     }
 
+    /**
+     * Delete an entity by it's id
+     */
     async delete(id) {
         return this.query().deleteById(id);
     }
