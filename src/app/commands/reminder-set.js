@@ -27,11 +27,11 @@ module.exports = class ReminderSetCommand extends BaseCommand {
             message.reply('please, specify time and message');
         }
         else {
-            const date = moment(`${args[0]} ${args[1]}`, 'HH:mm DD/MM/YYYY');
+            const date = moment(`${args[0]} ${args[1]}`, 'HH:mm YYYY/MM/DD');
             const userMessage = args.slice(2).join(' ');
 
             if (date.isValid() && date.isAfter(new Date())) {
-                reminderFacade.setReminder(message, Reminder.fromJson({
+                reminderFacade.createReminder(message, Reminder.fromJson({
                     id: uuidv4(),
                     userId: message.author.id,
                     message: userMessage,

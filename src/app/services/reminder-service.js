@@ -8,6 +8,10 @@ class ReminderService extends BaseCrudService {
     constructor() {
         super(ReminderRepository);
     }
+
+    getRemindersByUser(userId) {
+        return this.repository.getRemindersByUser(userId);
+    }
 }
 
 module.exports = new ReminderService();

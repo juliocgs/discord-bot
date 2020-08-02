@@ -27,7 +27,7 @@ class BaseCommand {
      */
     async execute(message, args) {
         if (!this.allowDM && message.channel.type === 'dm') {
-            throw new DmException(`Sorry, I can only use the \`${this.name}\` command in a server!`);
+            throw new DmException(`Sorry, I can only use the \`${this.config.prefix}${this.name}\` command in a server!`);
         }
     }
 }
