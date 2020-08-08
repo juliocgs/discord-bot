@@ -9,6 +9,9 @@ class ReminderService extends BaseCrudService {
         super(ReminderRepository);
     }
 
+    /**
+     * Gets all reminders of a user
+     */
     getRemindersByUser(userId) {
         return this.repository.getRemindersByUser(userId);
     }

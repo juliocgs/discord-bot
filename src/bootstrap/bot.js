@@ -26,7 +26,10 @@ module.exports = class Bot {
     setupDatabase() {
         const knex = Knex(require('../config/database.config.json')[process.env.NODE_ENV]);
 
-        knex.migrate.latest().catch(console.log);
+        if (this.configService.migrate) {
+            knex.migrate.latest();
+        }
+
         Model.knex(knex);
     }
 

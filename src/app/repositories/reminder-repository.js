@@ -9,6 +9,9 @@ class ReminderRepository extends BaseRepository {
         super(Reminder);
     }
 
+    /**
+     * Gets all reminders of a user
+     */
     getRemindersByUser(userId) {
         return this.query().where('user_id', userId).orderBy('execution_date', 'asc');
     }

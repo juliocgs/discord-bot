@@ -3,12 +3,14 @@
         "token": "YOUR_BOT_TOKEN",
         "prefix": "!",
         "initChannel": "bot-testing",
-        "authorId": "YOUR_DISCORD_USER_ID"
+        "authorId": "YOUR_DISCORD_USER_ID",
+        "migrate": false
     },
     "production": {
         "token": "xxxxxx",
         "prefix": "xxxxxx",
         "initChannel": "xxxxxx",
-        "authorId": "xxxxxx"
+        "authorId": "xxxxxx",
+        "migrate": false
     }
 }
